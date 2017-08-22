@@ -1,0 +1,35 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+.btn-voltar{
+   display: none;	
+   position: fixed;
+   bottom: 4%;
+   right: 3%;
+   width: 50px;
+   height: 50px;
+   z-index: 10;
+   border-radius: 50%;
+}
+.btn-voltar-link{
+   display: block;
+   line-height: 60px;
+   text-align: center;
+
+}
+
+.block-content {
+        margin-top: 55px;
+        margin-bottom: 50px;
+}

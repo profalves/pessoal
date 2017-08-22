@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="msapplication-tap-highlight" content="no">
+    
+    
+        <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+        
+        <title>Rodrigo Alves - Site Pessoal e Profissional</title>
+        <meta name="author" content="Rodrigo Alves" />
+        <meta name="keywords" content="Rodrigo, Alves, site, pessoal, social, redes sociais, profissional, currículo, curriculum, vitae, desenvolvedor, web, front-end, full-stack, back-end" />
+        <meta name="description" content="Este é o meu site pessoal e profissional, assim fica fácil de conhecer minhas habilidades profissionais e um pouco da minha vida social" />
+        <meta name="theme-color" content="#EE6E73">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+       
+    
+</head>
+
+    
+
+<body>
+<!-- btn voltar-para-o-topo -->
+<div class="jbtn-voltar grey lighten-5  btn-voltar">
+	<a class="jbtn-voltar-link btn-voltar-link" href="#!">
+		<i class="material-icons">navigation</i>
+	</a>
+</div>
+
+<!-- NAVBAR -->
+ <div class="navbar-fixed">
+  <nav class="teal" role="navigation">
+    <div class="nav-wrapper container">
+    <!-- logo img -->
+    <!-- <img class="center" width="40px" style="padding: 12px 0 0 0; position: relative; top: -4px; left: -10px;" src="imagens/logo.png"> --> 
+	<a id="logo-container left" href="#" class="brand-logo">&nbsp;Rodrigo Alves</a>
+	<!-- <a id="logo-container left" href="#" class="brand-logo hide-on-med-and-down" style="color: #00cbb8;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;web</a>
+	<a id="logo-container left" href="#" class="brand-logo hide-on-large-only">sieweb</a> -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Início</a></li>
+		<li><a href="#servicos">Negócios</a></li>
+		<li><a href="#quem">Habilidades</a></li>
+		<li><a href="#contato">Contato</a></li>
+      </ul>
+
+     
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav> 
+  </div>
+   <ul id="nav-mobile" class="side-nav">
+        <li><a href="#"><i class="material-icons">home</i> Início</a></li>
+		<li><a href="#servicos"><i class="material-icons">build</i>Negócios</a></li>
+		<li><a href="#quem"><i class="material-icons">edit</i>Habilidades</a></li>
+		<li><a href="#contato"><i class="material-icons">phone_android</i>Contato</a></li>
+   </ul>
+
+    
+    
+  <div class="container">
+      <div class="row">
+          
+        <div class="col s12 m6 center">
+            <div class="block-content">
+                <img class="responsive-img hide-on-med-and-down" src="img/imagem005.jpg">
+                <img class="circle responsive-img hide-on-large-only" src="img/imagem005.jpg" width="70%">
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="block-content">
+                <h3>Desenvolverdor Full Stack</h3>
+                <h4>Desenvolvimento Web, Mobile e Desktop</h4>
+                <h5>Focado em metas. Determinado a executar e concluir tarefas em tempo hábil. Facilidade de lidar com a pressão. Organização e controle de fluxo de trabalho. Domina métodos de interação e execução de tarefas em equipe. Apaixonado por tecnologia e desenvolvimento, viu na docência uma nova oportunidade de crescimento pessoal. Experiencia dando treinamento/palestras para equipes e empresas. Ampla disposição para aprender novas tecnologias também.</h5>
+                
+                <div class="row">
+                <a href="curriculo.html" target="_blank" class="center waves-effect waves-light btn-large">veja o curriculo</a></div>
+                
+                <div class="row">
+                <a href="#!" target="_blank" class="center waves-effect waves-light btn-large hide-on-med-and-up">veja o portifólio</a></div>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  
+   <div id="servicos" class="section no-pad-bot teal darken-3 section scrollspy" id="index-banner">
+  
+  
+ 
+    <div class="container">
+      <br><br>
+	  
+        <h1 class="header"><a class="white-text">Conheça os meus<br />serviços:</h1>
+	  
+      <div class="row ">
+        <h5 class="header col s12 light white-text">Soluções sob medida para você e sua empresa.</h5>
+		
+      </div>
+      
+      <br>
+		
+		      <div class="row">
+				<div class="col s12 m3">
+				  <div class="icon-block">
+					<h2 class="center white-text"><i class="material-icons">language</i></h2>
+					<h5 class="center">Webdesign</h5>
+
+					<p class="light center"><br>Sites institucionais gerenciáveis com painel de administração e todo conteúdo relevante do seu negócio.</p>
+				  </div>
+				</div>
+				
+				<div class="col s12 m3">
+				  <div class="icon-block">
+					<h2 class="center white-text"><i class="material-icons">web</i></h2>
+					<h5 class="center">Sistemas e Aplicativos</h5>
+
+					<p class="light center">Em plataformas web e mobile,  temos uma equipe de analistas experiente pronta para desenvolver o seu projeto digital.</p>
+				  </div>
+				</div>
+				
+				<div class="col s12 m3">
+				  <div class="icon-block">
+					<h2 class="center white-text"><i class="material-icons">trending_up</i></h2>
+					<h5 class="center">Marketing Digital</h5>
+
+					<p class="light center">Gestão de redes sociais, criação de e-mail marketing e administração de links patrocinados no Google.</p>
+				  </div>
+				</div>
+				
+				<div class="col s12 m3">
+				  <div class="icon-block">
+					<h2 class="center white-text"><i class="material-icons">mode_edit</i></h2>
+					<h5 class="center">Design</h5>
+
+					<p class="light center"><br>Design inovador para logotipos e materiais gráficos que agregam valor a sua empresa, produto ou projeto.</p>
+				  </div>
+				</div>
+
+			  </div>
+			  
+
+	  
+	<br>
+	<br>
+        
+       </div>
+    </div>
+
+  
+  <!--Quem somos-->
+    <div id="quem" class="section no-pad-bot section scrollspy" id="index-banner">
+  
+  
+ 
+<div class="container">
+      <br><br>
+      <h3 class="center" style="color: #00695c;">Habilidades</h3><br><br>
+      <div class="row">
+        <h5 class="" style="color:#00695c; ">HTML5/CSS3</h5>
+        <h6 style="color: #00695c;">90%</h6>
+        <div class="progress">
+          <div class="determinate" style="width: 70%"></div>
+        </div>
+        
+      </div>
+
+       <div class="row">
+        <h5 class="" style="color:#00695c; ">PHP</h5>
+        <h6 style="color: #00695c;">70%</h6>
+        <div class="progress">
+          <div class="determinate" style="width: 50%"></div>
+        </div>
+        
+      </div>
+
+       <div class="row">
+        <h5 class="" style="color:#00695c; ">JS/JQUERY</h5>
+        <h6 style="color: #00695c;">95%</h6>
+        <div class="progress">
+          <div class="determinate" style="width: 60%"></div>
+        </div>
+        
+      </div>
+
+       <div class="row">
+        <h5 class="" style="color:#00695c; ">MATERIALIZE</h5>
+        <h6 style="color: #00695c;">100%</h6>
+        <div class="progress">
+          <div class="determinate" style="width: 80%"></div>
+        </div>
+        
+      </div>
+    
+      <div class="row">
+        <h5 class="" style="color:#00695c; ">BOOTSTRAP</h5>
+        <h6 style="color: #00695c;">80%</h6>
+        <div class="progress">
+          <div class="determinate" style="width: 80%"></div>
+        </div>
+        
+      </div>
+      
+      <br><br>
+
+    </div>
+	<br>
+	<br>
+  </div>
+
+
+   <footer class="black page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 s12">
+            <h5 class="white-text">Rodrigo Alves</h5>
+            <!--<p class="grey-text text-lighten-4">Feira de Santana - Ba</p>-->
+            <img src="img/Whatsapp_ico.png"><p class="grey-text text-lighten-4">(75) 99176-7045</p>
+          </div>
+          <div class="col l4 s12" style="overflow: hidden;">
+            <h5 class="white-text">Connect</h5>
+                <a href="https://www.facebook.com/professoralves" target="_blank"><img src="img/facebook_icon.png"></a>
+                <a href="https://twitter.com/prof_alves" target="_blank"><img src="img/twitter_icon.png"></a>
+                <a href="https://www.instagram.com/prof_alves/" target="_blank"><img src="img//instagram_socialnetwork.png"></a>
+                <br>
+                <iframe src="https://ghbtns.com/github-btn.html?user=profalves&type=follow&count=false" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                <!--<a href="https://github.com/profalves" target="_blank"><img src="img/Apps-Github-icon.png"></a>
+            <!-- <li><a class="white-text" href="#!">Linkedin</a></li>-->
+          </div>
+        </div>
+      </div>
+      <div class="gray footer-copyright" id="contato">
+        <div class="container">
+        © <a href="http://rodrigoalves.hol.es" target="_blank">Rodrigo Alves</a>, All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/title.js"></script>
+  <script>
+      $(document).ready(function(){
+    $('.slider').slider();
+    });
+	
+  </script>
+
+  </body>
+</html>
